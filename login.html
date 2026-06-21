@@ -223,6 +223,202 @@
             <form id="loginForm">
                 <div class="form-group">
                     <label for="email">Email Address</label>
+                    <input type="email" id="email" required >
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" required >
+                </div>
+
+                <div class="form-options">
+                    <label class="remember">
+                        <input type="checkbox" id="remember"> Remember me
+                    </label>
+                    <a href="https://www.idp.com/nigeria/" class="forgot">Forgot password?</a>
+                </div>
+
+                <a href="https://www.idp.com/nigeria/" class="button">Log In</a>
+
+                <div class="divider">or</div>
+
+                <a href="https://www.idp.com/nigeria/" class="button btn-google">
+                    Continue with Google
+                </a>
+
+                <div class="signup-link">
+                    New to StudyAbroad Connect? <a href="https://www.idp.com/nigeria/">Create account</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Random featured country logic
+        const countries = [
+            {
+                name: "United Kingdom",
+                image: "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=800",
+                tagline: "Home to Oxford, Cambridge & 150+ top universities"
+            },
+            {
+                name: "Canada",
+                image: "https://images.unsplash.com/photo-1503614472-8c93d56e92ce?w=800",
+                tagline: "Affordable tuition + post-study work permits"
+            },
+            {
+                name: "Germany",
+                image: "https://images.unsplash.com/photo-1467269204594-9661b134dd2b?w=800",
+                tagline: "Tuition-free public universities for international students"
+            },
+            {
+                name: "Australia",
+                image: "https://images.unsplash.com/photo-1523482580672-f109ba8cb9be?w=800",
+                tagline: "World-class research + amazing student cities"
+            },
+            {
+                name: "United States",
+                image: "https://images.unsplash.com/photo-1485738423138-0f7c76c02b5e?w=800",
+                tagline: "4,000+ universities & flexible degree options"
+            }
+        ];
+
+        const randomCountry = countries[Math.floor(Math.random() * countries.length)];
+        document.getElementById('heroSection').style.setProperty('--bg-image', `url(${randomCountry.image})`);
+        document.getElementById('countryBadge').innerHTML = `📍 Featured: ${randomCountry.name}`;
+
+        // Removed form handler since all buttons are now direct links
+    </script>
+</body>
+</html>            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border 0.3s;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+       .form-options {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+            font-size: 0.9rem;
+        }
+
+       .remember {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #333;
+        }
+
+       .remember input {
+            width: auto;
+        }
+
+       .forgot {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+       .forgot:hover {
+            text-decoration: underline;
+        }
+
+        .button, button {
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s;
+            display: block;
+            text-align: center;
+            text-decoration: none;
+        }
+
+        .button:hover, button:hover {
+            transform: translateY(-2px);
+        }
+
+        .btn-google {
+            background: white !important; 
+            color: #333 !important; 
+            border: 2px solid #e0e0e0 !important;
+        }
+
+       .divider {
+            text-align: center;
+            margin: 24px 0;
+            color: #999;
+            font-size: 0.9rem;
+            position: relative;
+        }
+
+       .divider::before,
+       .divider::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            width: 45%;
+            height: 1px;
+            background: #e0e0e0;
+        }
+
+       .divider::before { left: 0; }
+       .divider::after { right: 0; }
+
+       .signup-link {
+            text-align: center;
+            margin-top: 24px;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+       .signup-link a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+           .container {
+                grid-template-columns: 1fr;
+            }
+           .hero {
+                padding: 40px 30px;
+            }
+           .form-section {
+                padding: 40px 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="hero" id="heroSection">
+            <h1>Welcome Back</h1>
+            <p>Continue your study abroad journey</p>
+            <p>Check applications, messages & scholarships</p>
+            <div class="country-badge" id="countryBadge">📍 Loading...</div>
+        </div>
+
+        <div class="form-section">
+            <h2>Log In</h2>
+            <p class="subtitle">Access your StudyAbroad Connect dashboard</p>
+
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="email">Email Address</label>
                     <input type="email" id="email">
                 </div>
 
